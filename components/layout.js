@@ -1,13 +1,25 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
+import { bgWrap } from '../styles/styles.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const name = '[Feng Liu]'
 export const siteTitle = 'Next.js fengliu'
 
 export default function Layout({ children, home }) {
   return (
+    <div>
+    <div className={bgWrap}>
+      <Image
+        alt="Mountains"
+        src="/images/mountains.jpg"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </div>
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
@@ -61,6 +73,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+    </div>
     </div>
   )
 }
